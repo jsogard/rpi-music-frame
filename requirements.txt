@@ -1,0 +1,12 @@
+
+Web App
+* pause/play/skip music
+* queue musi
+* add music, album art, music videos
+
+
+
+Hardware
+* connect to speakers via usb + 3.5mm or BT
+* display album art
+* display music video
