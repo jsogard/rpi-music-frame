@@ -12,10 +12,18 @@
 	<div id="navbar">
 		<table>
 			<tr>
-				<td><a href="/">Upload</a></td>
-				<td><a href="/">Control</a></td>
-				<td><a href="/">Browse</a></td>
-				<td><a href="https://github.com/jsogard/rpi-music-frame" target="_blank">Source Code</a></td>
+				<td>
+					<a href="https://jsogard.github.io" target="_blank">
+						<img src="img/user.png">
+						<div><p>me</p></div>
+					</a>
+				</td>
+				<td>
+					<a href="https://github.com/jsogard/rpi-music-frame" target="_blank">
+						<img src="img/github.png">
+						<div><p>source code</p></div>
+					</a>
+				</td>
 			</tr>
 		</table>
 		<div id="line-break"></div>
@@ -23,6 +31,7 @@
 	
 	<div id="content">
 		<div class="util" id="upload">
+			<img src="img/cloud-upload.png">
 			<form action="php/upload_video.php" method="post" enctype="multipart/form-data">
 				Select video to upload:
 				<input type="file" name="fileToUpload" id="fileToUpload">
@@ -30,12 +39,20 @@
 			</form>
 		</div>
 		<div class="util" id="control">
-			<img id="play" src="#">
-			<img id="pause" src="#">
-			<img id="skip" src="#">
-			<img id="reset" src="#">
+			<img src="img/music-player.png">
+			<table>
+				<tr>
+					<td><img id="reset" src="img/stop.png"></td>
+					<td>
+						<img id="play" src="img/play-button.png">
+						<img id="pause" src="img/pause.png">
+					</td>
+					<td><img id="skip" src="img/next.png"></td>
+				</tr>
+			</table>
 		</div>
 		<div class="util" id="browse">
+			<img src="img/library.png">
 			<div id="library">
 			</div>
 		</div>

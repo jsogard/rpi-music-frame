@@ -7,12 +7,32 @@ a {
 	color: black;
 }
 
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
 
 
 #navbar {
 	width: 60%;
-	height: 80px;
+	margin-top: 5%;
 	margin-left: 20%;
+}
+
+#navbar *{
+	height: 80px;
+}
+
+#navbar p{
+	height: auto;
+	color: #000000;
+	display: none;
+	margin: 0;
+}
+
+#navbar a div {
+	height: 20px;
 }
 
 #navbar table {
@@ -31,11 +51,32 @@ a {
 	background: linear-gradient(to right, #00000000, #999999, #00000000);
 	height: 1px;
 	width: 100%;
-	margin-top: 10px
 }
 
 #content {
 	width: 50%;
 	margin-left: 25%;
 	margin-top: 100px;
+	height: 300px;
+}
+
+#library {
+	width: 90%;
+	background: #ffffff;
+	height: 250px;
+	margin-left: 5%;
+}
+
+#control table {
+	width: 80%;
+	margin-left: 10%;
+	table-layout: fixed;
+}
+
+#control table td {
+	height: 100px;
+}
+
+#control table img {
+	height: 100%;
 }
