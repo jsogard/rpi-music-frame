@@ -1,8 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Raspberry Pi Music Frame</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
 </head>
 <body>
+	
+
+	<div id="navbar">
+		<table>
+			<tr>
+				<td>Upload</td>
+				<td>Control</td>
+				<td>Browse</td>
+				<td><a href="https://github.com/jsogard/rpi-music-frame" target="_blank">Source Code</a></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="content">
+		<div class="util" id="upload">
+			<form action="php/upload_video.php" method="post" enctype="multipart/form-data">
+				Select video to upload:
+				<input type="file" name="fileToUpload" id="fileToUpload">
+				<input type="submit" value="Upload video" name="submit">
+			</form>
+		</div>
+		<div class="util" id="control">
+			<img id="play" src="#">
+			<img id="pause" src="#">
+			<img id="skip" src="#">
+			<img id="reset" src="#">
+		</div>
+		<div class="util" id="browse">
+			<div id="library">
+			</div>
+		</div>
+	
+	</div>
+
+
+<!--
+
+-->
+
 </body>
 </html>
