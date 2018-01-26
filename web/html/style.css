@@ -7,6 +7,12 @@ a {
 	color: black;
 }
 
+p {
+	font-family: 'Josefin Sans', sans-serif;
+	letter-spacing: 3px;
+	color: #555555;
+}
+
 body {
 	height: 100%;
 	margin: 0;
@@ -26,7 +32,6 @@ body {
 
 #navbar p{
 	height: auto;
-	color: #000000;
 	display: none;
 	margin: 0;
 }
@@ -68,15 +73,17 @@ body {
 }
 
 #control table {
-	width: 80%;
-	margin-left: 10%;
+	width: 400px;
+	margin-left: calc((100% - 400px)/2);
 	table-layout: fixed;
 }
 
 #control table td {
 	height: 100px;
+	text-align: center;
 }
 
 #control table img {
 	height: 100%;
+	cursor: pointer;
 }
