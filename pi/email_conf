@@ -1,0 +1,9 @@
+root=postmaster
+mailhub=smtp.gmail.com:587
+hostname=raspberrypi
+FromLineOverride=NO
+AuthUser=<emailaddr>
+AuthPass=<emailpwd>
+UseSTARTTLS=YES
+# if errors, turn on less secure apps in gmail
+# https://myaccount.google.com/lesssecureapps
