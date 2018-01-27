@@ -1,5 +1,5 @@
 <?php
 
-exec("echo -n p > /tmp/cmd");
+exec("echo -n p > /home/pi/master/cmd");
 
 ?>
