@@ -10,3 +10,15 @@ Hardware
 * connect to speakers via usb + 3.5mm or BT
 * display album art
 * display music video
+
+
+
+Tasks:
+set up sql database for Library, Playlist
+connect front end controls to php
+create shell scripts to be executed by php
+display library 
+check if video is playing
+video scraping
+video streaming
+set up ip notification on connect

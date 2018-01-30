@@ -38,11 +38,19 @@ $(document).ready(function(){
 	
 	function getLibrary(){
 		$.ajax({
-			url: "php/get_videos_list.php",
+//			url: "php/get_videos_list.php",
+			url: "library.json",
 			dataType: "json",
 			success: function(data){
 				console.log(data);
 			}
 		})
 	}
+	
+	$.getJSON(
+		"library.json", 
+		function(result){
+			console.log(result);
+		}
+	);
 });
