@@ -1,0 +1,1 @@
+echo -n q > /home/pi/master/cmd

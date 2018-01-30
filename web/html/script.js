@@ -36,21 +36,26 @@ $(document).ready(function(){
 			})
 		})
 	
-	function getLibrary(){
-		$.ajax({
-//			url: "php/get_videos_list.php",
-			url: "library.json",
-			dataType: "json",
-			success: function(data){
-				console.log(data);
-			}
-		})
+	var library = [ { "title": "Something Good", "artist": "Alt-J", "duration": "00:03:41", "last_played": "2018-01-30 04:10:13", "id": "1" }, { "title": "Sons", "artist": "CONCORDE", "duration": "00:03:44", "last_played": "2018-01-30 04:18:00", "id": "2" }, { "title": "Nobody Speak feat. Run The Jewels", "artist": "DJ Shadow", "duration": "00:03:52", "last_played": "2018-01-30 04:19:21", "id": "3" }, { "title": "Acid Rain", "artist": "Lorn", "duration": "00:02:52", "last_played": "2018-01-30 04:20:15", "id": "4" } ];
+	
+//	$.ajax({
+//		url: "php/library.php",
+//		success: function(data){
+//			console.log(data);
+//		}
+//	})
+	
+	for(var i = 0; i < library.length; i++){
+		var item = library[i];
+		var song = $("<tr></tr>");
+		song.addClass("song")
+		song.attr("id", item.id);
+		song.append($("<td>" + item.title + "</td>"));
+		song.append($("<td>" + item.artist + "</td>"));
+		song.append($("<td>" + item.duration + "</td>"));
+		
+		
+		$("#library").append(song);
 	}
 	
-	$.getJSON(
-		"library.json", 
-		function(result){
-			console.log(result);
-		}
-	);
 });
