@@ -3,6 +3,7 @@
 <head>
 	<title>Raspberry Pi Music Frame</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="script.js"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -55,11 +56,18 @@
 			<img src="img/library.png">
 			<table id="library">
 				<tr>
-					<th>Song</th>
-					<th>Artist</th>
-					<th>Length</th>
+					<th class="song-col" colspan="2">Song</th>
+					<th class="artist-col">Artist</th>
+					<th class="length-col">Length</th>
 				</tr>
 			</table>
+			<div id="song-dropdown">
+				<ul>
+					<li id="play-now">Play Now</li>
+					<li id="play-next">Play Next</li>
+					<li id="queue">Add to Queue</li>
+				</ul>
+			</div>
 		</div>
 	
 	</div>

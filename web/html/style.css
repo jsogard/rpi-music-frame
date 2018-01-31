@@ -1,5 +1,6 @@
 html {
 	background: linear-gradient(to right, #bbbbbb, #eeeeee, #eeeeee, #bbbbbb);
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 a {
@@ -66,9 +67,83 @@ body {
 
 #library {
 	width: 90%;
-	background: #ffffff;
-	height: 250px;
+	background: #ffffff00;
 	margin-left: 5%;
+	border-collapse: collapse;
+	text-align: left;
+	color: #000000aa;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#browse {
+	padding-bottom: 60px;
+}
+
+#library tr{
+	height:  40px;
+}
+
+#library th i{
+	margin: 5px;
+	display: none;
+}
+
+#library tr:hover:not(:first-child){
+	background: #00000011;
+}
+
+.length-col {
+	text-align: right;
+}
+
+#library td, #library th {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#library .action-col {
+	width: 5%;
+	cursor: pointer;
+}
+
+#library tr:first-child{
+	border-bottom: 1px solid #00000033;
+}
+
+#library th{
+	cursor: pointer;
+}
+
+#library .action-col i{
+	display: none;
+}
+
+#library td{
+	border: 0px;
+}
+
+#browse #song-dropdown {
+	border: 1px #cccccc solid;
+	background: #dddddd;
+	width: 120px;
+	color: #555555;
+	position: absolute;
+	display: none;
+}
+
+#song-dropdown ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#song-dropdown li {
+	padding: 5px;
+	cursor: pointer;
+}
+
+#song-dropdown li:hover {
+	background: #bbbbbb;
 }
 
 #control table {
