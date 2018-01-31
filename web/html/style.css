@@ -1,3 +1,5 @@
+/* GENERAL STUFF */
+
 html {
 	background: linear-gradient(to right, #bbbbbb, #eeeeee, #eeeeee, #bbbbbb);
 	font-family: 'Josefin Sans', sans-serif;
@@ -20,6 +22,7 @@ body {
 	padding: 0;
 }
 
+/* NAVBAR */
 
 #navbar {
 	width: 60%;
@@ -59,11 +62,15 @@ body {
 	width: 100%;
 }
 
+/* CONTENT */
+
 #content {
 	width: 50%;
 	margin-left: 25%;
 	margin-top: 50px;
 }
+
+/* BROWSE/LIBRARY */
 
 #library {
 	width: 90%;
@@ -146,18 +153,53 @@ body {
 	background: #bbbbbb;
 }
 
-#control table {
-	width: 400px;
-	margin-left: calc((100% - 400px)/2);
-	table-layout: fixed;
-}
+/* CONTROL */
 
-#control table td {
-	height: 100px;
+#control {
 	text-align: center;
 }
 
-#control table img {
+#control img {
 	height: 100%;
 	cursor: pointer;
+}
+
+#control #track {
+	width: 92%;
+	margin-left: 4%;
+	height: 5px;
+	background: #777777;
+}
+
+#control #track #played-track {
+	height: 100%;
+	width: 30%;
+	background: #cccccc;
+}
+
+#control div #curr-time{
+	float: left;
+	display: inline;
+}
+
+#control div #end-time{
+	float: right;
+	display: inline;
+}
+
+#control #playback-control {
+	height: 60px;
+}
+
+#control #playback-control * {
+	margin: 30px;
+}
+
+#control #volume-control {
+	height: 50px;
+}
+
+#control #volume-control * {
+	margin: 10px;
+	margin-top: 50px;
 }

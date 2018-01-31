@@ -6,5 +6,6 @@ sudo service apache2 restart
 sudo chown -R pi /var/www
 mkfifo /tmp/cmd
 chmod 777 /tmp/cmd
+# give www-data permission
 sudo cat email_conf > /etc/ssmtp/ssmtp.conf
 echo "Site now visible at $(hostname -I).\nPut files in /var/www/html/" | mail -s "Raspberry Pi Webapp Setup Complete" <emailaddr>
