@@ -182,7 +182,7 @@ $(document).ready(function(){
 			$.get("php/curr.php", setCurrentSong(data));
 		}
 		
-		setInterval(function(){ update(); }, 1000);
+		//setInterval(function(){ update(); }, 1000);
 		
 		$("#stop")
 			.click(function(){
@@ -230,5 +230,11 @@ $(document).ready(function(){
 	setUpControl();
 	
 	/* --------------------------- */
+	
+	$("input:file").change(function(){
+		
+		var fileName = (this.files.length > 0 ? this.files[0].name : "Choose a file...");
+		$("#fileContainer strong").html(fileName);
+	})
 	
 });
