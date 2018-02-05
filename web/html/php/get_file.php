@@ -8,6 +8,6 @@ $base_dir = "/home/pi/Videos/";
 $arr = array();
 exec("ls " . $base_dir . " | grep " . $id . "%~", $arr);
 
-echo $arr[0];
+$file_name = $arr[0];
 
 ?>

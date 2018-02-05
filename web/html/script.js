@@ -2,14 +2,19 @@ $(document).ready(function(){
 	
 	function dropZeros(time){
 		var i = 0;
-		while(i < time.length && (time.charAt(i) == '0' || time.charAt(i) == ':')){ i++; };
+		while(i < 3 && (time.charAt(i) == '0' || time.charAt(i) == ':')){ i++; };
 		return time.substr(i);
+	}
+	
+	function sec2MS(sec){
+		var min = Math.floor(sec / 60);
+		var sec = sec % 60;
+		return "" + min + ":" + (sec < 10 ? "0" : "") + sec;
 	}
 	
 	/* --------------------------- */
 	
 	function setUp(){
-//		$(".util > img").hide();
 	
 		$(".util").hide();
 
@@ -116,17 +121,17 @@ $(document).ready(function(){
 		
 		$("#browse #song-dropdown #play-next")
 			.click(function(){
-				$.post("php/play_next.php", {"video_id":selected_song});
+				$.post("php/play.php", {"song_id":selected_song, "action":"next"});
 			});
 		
 		$("#browse #song-dropdown #play-now")
 			.click(function(){
-				$.post("php/play_now.php", {"video_id":selected_song});
+				$.post("php/play.php", {"song_id":selected_song, "action":"now"});
 			});
 		
 		$("#browse #song-dropdown #queue")
 			.click(function(){
-				$.post("php/queue.php", {"video_id":selected_song});
+				$.post("php/play.php", {"song_id":selected_song, "action":"queue"});
 			});
 		
 	}
@@ -141,7 +146,7 @@ $(document).ready(function(){
 	
 	function setUpControl(){
 		
-		function playNotPause(play){
+		function displayPlay(play){
 			if(play){
 				$("#play").show();
 				$("#pause").hide();
@@ -151,78 +156,77 @@ $(document).ready(function(){
 			}
 		}
 		
-		function setTime(time){
-			$("curr-time").text("00:00:00");
-			$("#played-track").css({ "width": "0%" });
+		function setTime(curr_sec, total_sec){
+			
+			$("#played-track").animate({ "width": (curr_sec * 100 / total_sec) + "%" }, 1000, 'linear');
+			
+			$("#curr-time").text(sec2MS(curr_sec));
+			$("#end-time").text(sec2MS(total_sec));
+			
 		}
 		
-		function setCurrentSong(curr_song){
-			
-			var curr_song = {
-				"title": "Something Good",
-				"artist": "Alt-J",
-				"duration": "00:03:41"
-			};
-			
-			curr_song.duration = dropZeros(curr_song.duration);
+		function setCurrentSong(title, artist){
 			
 			$("#current-song")
-				.text(curr_song.title);
+				.text(title);
 
 			$("#current-artist")
-				.text(curr_song.artist);
-
-			$("#end-time")
-				.text(curr_song.duration);
+				.text(artist);
 		}
 		
 		function update(){
-			$.get("php/time.php", setTime(data));
-			$.get("php/is_play.php", playNotPause(data));
-			$.get("php/curr.php", setCurrentSong(data));
+			$.get("php/curr.php", function(data){
+				
+				/*
+				song_id
+				title
+				artist
+				is_paused
+				current_sec
+				maximum_sec
+				*/
+				
+				setCurrentSong(data[1], data[2]);
+				displayPlay(data[3] == 'true');
+				setTime(parseInt(data[4]), parseInt(data[5]));
+			});
 		}
 		
 		//setInterval(function(){ update(); }, 1000);
 		
 		$("#stop")
 			.click(function(){
-				$.post("php/stop.php");
-				$("#curr-time").text("00:00");
-				$("#played-track").css({"width": "0%"});
-				playNotPause(false);
+				$.post("php/playback.php", {"action":"stop"}, update, "json");
 			});
 		
 		$("#pause")
 			.click(function(){
-				$.post("php/pause.php");
-				playNotPause(true);
+				$.post("php/playback.php", {"action":"pause"}, update, "json");
 			});
 		
 		$("#play")
 			.click(function(){
-				$.post("php/pause.php");
-				playNotPause(false);
+				$.post("php/playback.php", {"action":"play"}, update, "json");
 			});
 		
 		$("#next")
 			.click(function(){
-				$.post("php/next.php");
-				update();
+				$.post("php/playback.php", {"action":"next"}, update, "json");
 			});
 		
 		$("#mute")
 			.click(function(){
-				$.post("php/mute.php");
+//				$.post("php/mute.php");
 			});
 		
 		$("#quiet")
 			.click(function(){
-				$.post("php/quiet.php");
+//				$.post("php/quiet.php");
 			});
 		
 		$("#loud")
 			.click(function(){
-				$.post("php/loud.php");
+//				$.post("php/loud.php");
 			});
 		
 	}
