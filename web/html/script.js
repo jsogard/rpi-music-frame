@@ -9,7 +9,7 @@ $(document).ready(function(){
 	/* --------------------------- */
 	
 	function setUp(){
-		$(".util > img").hide();
+//		$(".util > img").hide();
 	
 		$(".util").hide();
 
@@ -195,13 +195,13 @@ $(document).ready(function(){
 		$("#pause")
 			.click(function(){
 				$.post("php/pause.php");
-				playNotPause(false);
+				playNotPause(true);
 			});
 		
-		$("#pause")
+		$("#play")
 			.click(function(){
 				$.post("php/pause.php");
-				playNotPause(true);
+				playNotPause(false);
 			});
 		
 		$("#next")

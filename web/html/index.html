@@ -3,6 +3,7 @@
 <head>
 	<title>Raspberry Pi Music Frame</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="script.js"></script>
 	<link rel="stylesheet" href="style.css">
@@ -32,17 +33,17 @@
 	</div>
 	
 	<div id="content">
-		<div class="util" id="upload">
-			<img src="img/cloud-upload.png">
-			<form class="form-style-7" action="php/upload_video.php" method="post" enctype="multipart/form-data">
+		<div class="util" id="upload" hidden>
+			<img src="img/cloud-upload.png" hidden>
+			<form class="form-style-7" action="php/upload_video.php" target="submission.form" method="post" enctype="multipart/form-data">
 				<ul>
 					<li>
 						<label for="name"><strong>Song</strong></label>
-						<input type="text" name="name" maxlength="100">
+						<input type="text" name="name" maxlength="100" required>
 					</li>
 					<li>
 						<label for="artist"><strong>Artist</strong></label>
-						<input type="text" name="artist" maxlength="100">
+						<input type="text" name="artist" maxlength="100" required>
 					</li>
 					<li>
 						<label id="fileContainer">
@@ -53,12 +54,13 @@
 					</li>
 					<li>
 						<input type="submit" value="Upload" >
+						<iframe name="submission.frame" hidden></iframe>
 					</li>
 				</ul>
 			</form>
 		</div>
-		<div class="util" id="control">
-			<img src="img/music-player.png">
+		<div class="util" id="control" hidden>
+			<img src="img/music-player.png" hidden>
 			<div>
 				<h1 id="current-song">Song</h1>
 				<h4 id="current-artist">Artist</h4>
@@ -84,8 +86,8 @@
 				<img id="loud" src="img/loud.png">
 			</div>
 		</div>
-		<div class="util" id="browse">
-			<img src="img/library.png">
+		<div class="util" id="browse" hidden>
+			<img src="img/library.png" hidden>
 			<table id="library">
 				<tr>
 					<th class="song-col" colspan="2">Song</th>

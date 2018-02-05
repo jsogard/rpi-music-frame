@@ -5,14 +5,13 @@ html {
 	font-family: 'Josefin Sans', sans-serif;
 }
 
-a {
-	text-decoration: none;
-	color: black;
+p {
+	letter-spacing: 3px;
 }
 
-p {
+input, p, a {
+	text-decoration: none;
 	font-family: 'Josefin Sans', sans-serif;
-	letter-spacing: 3px;
 	color: #555555;
 }
 
@@ -114,7 +113,7 @@ body {
 }
 
 #library tr:first-child{
-	border-bottom: 1px solid #00000033;
+	border-bottom: 1px solid #bbbbbb;
 }
 
 #library th{
@@ -193,6 +192,10 @@ body {
 
 #control #playback-control * {
 	margin: 30px;
+}
+
+#control img:active{
+	filter: invert(50%);
 }
 
 #control #volume-control {

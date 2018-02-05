@@ -5,7 +5,6 @@
     margin:50px auto;
     background:#00000000;
     padding:20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
 }
 .form-style-7 h1{
     display: block;
@@ -66,7 +65,6 @@
     line-height: 25px;
     font-size: 16px;
     padding: 0;
-    font-family: Georgia, "Times New Roman", Times, serif;
 	background: linear-gradient(#00000000, #ffffffdd);
 }
 .form-style-7 input[type="text"]:focus,
