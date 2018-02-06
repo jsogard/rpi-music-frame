@@ -8,4 +8,4 @@ fi
 #omxplayer -o hdmi /home/pi/Videos/$1 < /home/pi/master/cmd > /dev/null &
 echo "$1:: Starting" >> /home/pi/master/cmd.log
 echo . > /home/pi/master/cmd
-echo -n $1 > /home/pi/master/curr
+ 

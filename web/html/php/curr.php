@@ -9,22 +9,18 @@ echo json_encode($arr);
 
 curr must be of the form:
 ========
-3
-Something Good
-Alt-J
-true
-142
+3%~song.mp4
+1
+242
 211
 ========
 
 representing the following:
 ========
-song_id
-title
-artist
+song_file
 is_paused
-current_sec
 maximum_sec
+current_sec
 ========
 
 when no song is playing it should be empty
