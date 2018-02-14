@@ -33,9 +33,9 @@ fi
 $dir/master/.play.sh $file $t_sec > /dev/null &
 
 # write info to curr
-echo $file > $dir/master/curr
-echo 0 >> $dir/master/curr
-echo $t_sec >> $dir/master/curr
+echo $file > $dir/master/curr 	# indicates file name
+echo 0 >> $dir/master/curr	# indicates whether paused
+echo $t_sec >> $dir/master/curr	# indicates current time
 
 
 # start it
