@@ -22,8 +22,11 @@ elif [ -s "$dir/master/queue" ]; then
 	file=`sed "1q;d" $dir/master/queue`
 	tail -n +2 $dir/master/queue > /tmp/queue && mv /tmp/queue $dir/master/queue
 else
-	# play a random song
-	file=`ls $dir/Videos | head -$((RANDOM%$(ls $dir/Videos | wc -w)+1)) | tail -1`
+	# populate the up next
+	$dir/master/populate_up_next.sh
+	# pop the up next
+	file=`sed "1q;d" $dir/master/up_next`
+	tail -n +2 $dir/master/up_next > /tmp/up_next && mv /tmp/up_next $dir/master/up_next
 fi
 
 # load up the movie in background via `.play.sh`
