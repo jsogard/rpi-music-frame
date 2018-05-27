@@ -49,6 +49,8 @@ exec("mediainfo $target_file | grep -m 1 Duration | sed -n -e 's/^.*: //p'", $du
 
 $dur = explode(" ", $dur[0]);
 $time = "00:" . $dur[0] . ":" . $dur[2];
+$songname = addslashes($songname);
+$songartist = addslashes($songartist);
 mysqli_query($link, "insert into Library (title, artist, duration, last_played) values ('$songname', '$songartist', '$time', NOW())");
 
 

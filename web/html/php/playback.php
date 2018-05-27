@@ -13,7 +13,7 @@ switch($_POST["action"]){
 		exec("$base_dir/next.sh");
 		break;
 	case "stop":
-		exec("$base_dir/stop.sh");
+		exec("$base_dir/force_quit.sh");
 		break;
 }
 

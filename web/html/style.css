@@ -94,7 +94,13 @@ body {
 	display: none;
 }
 
+/*
 #library tr:hover:not(:first-child){
+	background: #00000011;
+}
+*/
+
+#library tr.highlight{
 	background: #00000011;
 }
 
