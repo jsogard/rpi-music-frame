@@ -110,6 +110,14 @@
 					<th class="artist-col">Artist</th>
 					<th class="length-col">Length</th>
 				</tr>
+				{% for song in songs %}
+				<tr>
+					<td class='song-col'>{{ song.title }}</td>
+					<td class='action-col'><i class='fa fa-ellipsis-v' aria-hidden='true'></i></td>
+					<td class='artist-col'>{{ song.artist }}</td>
+					<td class='length-col'>{{ song.duration }}</td>
+				</tr>
+				{% endfor %}
 			</table>
 			<div id="song-dropdown">
 				<ul>

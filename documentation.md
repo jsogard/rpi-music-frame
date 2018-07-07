@@ -58,7 +58,8 @@ Install with:
 
 #### Run the app
 
-> $ python manage.py runserver
+> $ .\vidpi\Scripts\activate
+> (vidpi) $ python manage.py runserver
 
 If there are unapplied migrations:
 
@@ -67,3 +68,7 @@ If there are unapplied migrations:
 Create superuser admin:
 
 > $ python manage.py createsuperuser
+
+# Install necessary software
+
+Install ffmpeg

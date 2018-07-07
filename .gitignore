@@ -1,3 +1,5 @@
-web/html/php/login.php
 vidpi/
 project/project/settings.py
+musicpi/webplayer/__pycache__
+musicpi/db.sqlite3
+musicpi/music_videos
