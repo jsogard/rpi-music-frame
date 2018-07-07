@@ -53,11 +53,13 @@
 	
 	<div id="content">
 		<div class="util" id="upload" hidden>
-			<form class="form-style-7" action="php/upload_video.php" target="submission.form" method="post" enctype="multipart/form-data">
+			
+			<form class="form-style-7" action="upload/" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
 				<ul>
 					<li>
-						<label for="name"><strong>Song</strong></label>
-						<input type="text" name="name" maxlength="100" required>
+						<label for="title"><strong>Song</strong></label>
+						<input type="text" name="title" maxlength="100" required>
 					</li>
 					<li>
 						<label for="artist"><strong>Artist</strong></label>
@@ -72,7 +74,6 @@
 					</li>
 					<li>
 						<input type="submit" value="Upload" >
-						<iframe name="submission.frame" hidden></iframe>
 					</li>
 				</ul>
 			</form>

@@ -1,5 +1,5 @@
 vidpi/
 project/project/settings.py
-musicpi/webplayer/__pycache__
+*/__pycache__/*
 musicpi/db.sqlite3
 musicpi/music_videos
