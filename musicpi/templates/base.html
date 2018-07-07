@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Raspberry Pi Music Frame</title>
+	{% load static %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src='{% static "script.js" %}'></script>
+	<link rel="stylesheet" href='{% static "style.css" %}'>
+	<link rel="stylesheet" href='{% static "form-sanwebe/style.css" %}'>
+</head>
+<body>
+	
+
+	<div id="navbar">
+		<table>
+			<tr>
+				<td>
+					<a href="library">
+						<img src='{% static "img/library.png" %}'>
+						<div><p>browse</p></div>
+					</a>
+				</td>
+				<td>
+					<a href="./">
+						<img src='{% static "img/music-player.png" %}'>
+						<div><p>control</p></div>
+					</a>
+				</td>
+				<td>
+					<a href="upload">
+						<img src='{% static "img/cloud-upload.png" %}'>
+						<div><p>upload</p></div>
+					</a>
+				</td>
+				<td>
+					<a href="https://jsogard.github.io" target="_blank">
+						<img src='{% static "img/user.png" %}'>
+						<div><p>me</p></div>
+					</a>
+				</td>
+				<td>
+					<a href="https://github.com/jsogard/rpi-music-frame" target="_blank">
+						<img src='{% static "img/github.png" %}'>
+						<div><p>source code</p></div>
+					</a>
+				</td>
+			</tr>
+		</table>
+		<div id="line-break"></div>
+	</div>
+	
+	<div id="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+</body>
+</html>

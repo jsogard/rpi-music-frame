@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="util" id="control">
+	<img src="img/music-player.png" hidden>
+	<div>
+		<h1 id="current-song">Song</h1>
+		<h4 id="current-artist">Artist</h4>
+	</div>
+	<div id="song-timeline">
+		<div id="track">
+			<div id="played-track"></div>
+		</div>
+		<div id="time-keeper">
+			<p id="curr-time">00:00</p>
+			<p id="end-time">12:34</p>
+		</div>
+	</div>
+	<div id="playback-control">
+		<img id="stop" src="img/stop.png">
+		<img id="play" src="img/play.png">
+		<img id="pause" src="img/pause.png" style="display:none">
+		<img id="skip" src="img/next.png">
+	</div>
+	<div id="volume-control">
+		<img id="mute" src="img/mute.png">
+		<img id="quiet" src="img/quiet.png">
+		<img id="loud" src="img/loud.png">
+	</div>
+</div>
+{% endblock %}

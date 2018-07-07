@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="util" id="library">
+	<img src="img/library.png" hidden>
+	<table id="library">
+		<tr>
+			<th class="song-col" colspan="2">Song</th>
+			<th class="artist-col">Artist</th>
+			<th class="length-col">Length</th>
+		</tr>
+		{% for song in songs %}
+		<tr>
+			<td class='song-col'>{{song.title}}</td>
+			<td class='action-col'><i class='fa fa-ellipsis-v' aria-hidden='true'></i></td>
+			<td class='artist-col'>{{song.artist}}</td>
+			<td class='length-col'>{{song.duration}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<div id="song-dropdown" hidden>
+		<ul>
+			<li id="play-now">Play Now</li>
+			<li id="play-next">Play Next</li>
+			<li id="queue">Add to Queue</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

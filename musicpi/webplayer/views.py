@@ -12,11 +12,19 @@ def get_all_music_videos():
 def index(request):
     return render(request, 'index.html', context={'songs' : get_all_music_videos()})
 
-@require_POST
-def upload_file(request):
-	music_video = MusicVideo(\
+def upload(request):
+	if request.method == 'POST':
+		music_video = MusicVideo(\
 						title=request.POST.get('title'), \
 					  	artist=request.POST.get('artist'), \
 					  	file=request.FILES['video'])
-	music_video.save()
-	return HttpResponse('success')
+		music_video.save()
+		return HttpResponse('success')
+	elif request.method == 'GET':
+		return render(request, 'upload.html')
+
+def control(request):
+	return render(request, 'control.html')
+
+def library(request):
+	return render(request, 'library.html', context={'songs' : get_all_music_videos()})
