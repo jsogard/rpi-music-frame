@@ -1,0 +1,239 @@
+/* GENERAL STUFF */
+
+html {
+	background: linear-gradient(to right, #bbbbbb, #eeeeee, #eeeeee, #bbbbbb);
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+	letter-spacing: 3px;
+}
+
+input, p, a {
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+	color: #555555;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* NAVBAR */
+
+#navbar {
+	width: 60%;
+	margin-top: 5%;
+	margin-left: 20%;
+}
+
+#navbar *{
+	height: 80px;
+}
+
+#navbar p{
+	height: auto;
+	display: none;
+	margin: 0;
+}
+
+#navbar a div {
+	height: 20px;
+}
+
+#navbar table {
+	height: 100%;
+	width: 100%;
+	table-layout: fixed;
+}
+
+#navbar td {
+	text-align: center;
+	cursor: pointer;
+	margin: 2px;
+}
+
+#line-break {
+	background: linear-gradient(to right, #00000000, #999999, #00000000);
+	height: 1px;
+	width: 100%;
+}
+
+/* CONTENT */
+
+#content {
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 50px;
+}
+
+/* BROWSE/LIBRARY */
+
+#library {
+	width: 90%;
+	background: #ffffff00;
+	margin-left: 5%;
+	border-collapse: collapse;
+	text-align: left;
+	color: #000000aa;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#browse {
+	padding-bottom: 60px;
+}
+
+#library tr{
+	height:  40px;
+}
+
+#library th i{
+	margin: 5px;
+	display: none;
+}
+
+/*
+#library tr:hover:not(:first-child){
+	background: #00000011;
+}
+*/
+
+#library tr.highlight{
+	background: #00000011;
+}
+
+.length-col {
+	text-align: right;
+}
+
+#library td, #library th {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#library .action-col {
+	width: 5%;
+	cursor: pointer;
+}
+
+#library tr:first-child{
+	border-bottom: 1px solid #bbbbbb;
+}
+
+#library th{
+	cursor: pointer;
+}
+
+#library .action-col i{
+	display: none;
+}
+
+#library td{
+	border: 0px;
+}
+
+#browse #song-dropdown {
+	border: 1px #cccccc solid;
+	background: #dddddd;
+	width: 120px;
+	color: #555555;
+	position: absolute;
+	display: none;
+}
+
+#song-dropdown ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#song-dropdown li {
+	padding: 5px;
+	cursor: pointer;
+}
+
+#song-dropdown li:hover {
+	background: #bbbbbb;
+}
+
+/* CONTROL */
+
+#control {
+	text-align: center;
+}
+
+#control img {
+	height: 100%;
+	cursor: pointer;
+}
+
+#control #track {
+	width: 92%;
+	margin-left: 4%;
+	height: 5px;
+	background: #777777;
+}
+
+#control #track #played-track {
+	height: 100%;
+	width: 30%;
+	background: #cccccc;
+}
+
+#control div #curr-time{
+	float: left;
+	display: inline;
+}
+
+#control div #end-time{
+	float: right;
+	display: inline;
+}
+
+#control #playback-control {
+	height: 60px;
+}
+
+#control #playback-control * {
+	margin: 30px;
+}
+
+#control img:active{
+	filter: invert(50%);
+}
+
+#control #volume-control {
+	height: 50px;
+}
+
+#control #volume-control * {
+	margin: 10px;
+	margin-top: 50px;
+}
+
+/* UPLOAD */
+
+#upload .button {
+	background: #00000000;
+	height: 50px;
+	border: 1px solid #777777;
+	border-radius: 10px;
+}
+
+#upload .button:hover {
+	background: #00000005;
+	
+}
+
+#upload .entry {
+	background: #00000000;
+	border: none;
+	border-bottom: 1px solid #777777;
+	
+}
+
+#upload form div {
+	margin: 20px;
+}
