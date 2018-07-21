@@ -7,10 +7,12 @@
 			<li>
 				<label for="title"><strong>Song</strong></label>
 				<input type="text" name="title" maxlength="100" required>
+				<p class="error" id="title-error">{{ error.title }}</p>
 			</li>
 			<li>
 				<label for="artist"><strong>Artist</strong></label>
 				<input type="text" name="artist" maxlength="100" required>
+				<p class="error" id="artist-error">{{ error.artist }}</p>
 			</li>
 			<li>
 				<label id="fileContainer">
@@ -18,11 +20,15 @@
 					<strong>Choose a file...</strong>
 					<input type="file" name="video"/>
 				</label>
+				<p class="error" id="file-error">{{ error.file }}</p>
 			</li>
 			<li>
 				<input type="submit" value="Upload" >
 			</li>
 		</ul>
 	</form>
+	<div id="popup-message">
+		<p></p>
+	</div>
 </div>
 {% endblock %}

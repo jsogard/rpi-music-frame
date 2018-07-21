@@ -18,10 +18,53 @@ $(document).ready(function(){
 					else
 						$(element).hide();
 				})
-			})
+			});
+	
+	$("input:file").change(function(){
+		
+		var fileName = (this.files.length > 0 ? this.files[0].name : "Choose a file...");
+		$("#fileContainer strong").html(fileName);
+	});
+
+	setTimeout(function(){
+		$("#upload #popup-message").fadeOut(700);
+	}, 10000);
+	
+	function update_time_slider(elapsed, duration, ratio){
+		var speed = 1000;
+//		console.log([elapsed, duration, ratio]);
+		
+		// account for possible error
+		var width = '' + (ratio > 1 ? 100 : ratio * 100) + '%';
+		
+		// if resetting track scrub, go faster
+		$("#played-track").css("width", width);
+		
+//		$("#played-track").animate({ "width": (percentage) + "%" }, speed, 'linear');
+	}
+	
+	function seconds_to_string(seconds){
+		var min = Math.floor(seconds/60);
+		seconds -= min * 60;
+		return '' +  min + ':' + (seconds < 10 ? '0' : '') + Math.floor(seconds);
+	}
+	
+	setInterval(function(){
+		$.get(
+			"current",
+			function(data){
+				$("#control #current-song").text(data.title);
+				$("#control #current-artist").text(data.artist);
+				$("#control #curr-time").text(seconds_to_string(data.time));
+				$("#control #end-time").text(seconds_to_string(data.duration));
+				update_time_slider(data.time, data.duration, data.ratio);
+			}
+		)
+	}, 200);
 	
 	
-	setUp();
+	
+	// setUp();
 	
 	/* --------------------------- */
 	/*
@@ -189,14 +232,10 @@ $(document).ready(function(){
 		
 	}
 	
-	setUpControl();
+	// setUpControl();
 	
 	/* --------------------------- */
 	
-	$("input:file").change(function(){
-		
-		var fileName = (this.files.length > 0 ? this.files[0].name : "Choose a file...");
-		$("#fileContainer strong").html(fileName);
-	})
+	
 	
 });

@@ -59,6 +59,7 @@ Install with:
 #### Run the app
 
 > $ .\vidpi\Scripts\activate
+> (vidpi) $ cd .\musicpi
 > (vidpi) $ python manage.py runserver
 
 If there are unapplied migrations:

@@ -178,7 +178,6 @@ body {
 
 #control #track #played-track {
 	height: 100%;
-	width: 30%;
 	background: #cccccc;
 }
 
@@ -236,4 +235,18 @@ body {
 
 #upload form div {
 	margin: 20px;
+	margin-bottom: 10px;
+}
+
+#upload .error {
+	color: red;
+	letter-spacing: 0;
+	margin: 1px;
+	font-size: 12px;
+	float: right;
+}
+
+#upload #popup-message {
+	text-align: center;
+	margin-bottom: 15px;
 }
